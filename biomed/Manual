@@ -2,7 +2,7 @@ nvidia/cuda:12.6.3-cudnn-devel-ubuntu24.04
 
 
 
-docker run -it --name biomed2 --mount type=bind,source=D:\,target=/data --gpus all nvidia/cuda:12.6.3-cudnn-devel-ubuntu24.04 bash
+docker run -it --name biomed --mount type=bind,source=D:\,target=/data --gpus all nvidia/cuda:12.6.3-cudnn-devel-ubuntu24.04 bash
 
 apt update
 apt upgrade
