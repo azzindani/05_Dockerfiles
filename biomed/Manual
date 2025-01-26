@@ -1,0 +1,47 @@
+nvidia/cuda:12.6.3-cudnn-devel-ubuntu24.04
+
+
+
+docker run -it --name biomed --mount type=bind,source=D:\,target=/data nvidia/cuda:12.6.3-cudnn-devel-ubuntu24.04 bash
+
+apt update
+apt upgrade
+apt-get install -y wget
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+source ~/.bashrc
+apt install plocate
+apt install openmpi-bin openmpi-common openmpi-doc libopenmpi-dev
+mpicc --version
+mpicc --showme:version
+
+export PATH=/usr/lib/openmpi/bin:$PATH
+export LD_LIBRARY_PATH=/usr/lib/openmpi/lib:$LD_LIBRARY_PATH
+echo 'export PATH=/usr/lib/openmpi/bin:$PATH' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/lib/openmpi/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
+source ~/.bashrc
+
+apt update
+apt-get update
+apt-get install ffmpeg libsm6 libxext6 -y
+
+conda create -y -n biomedparse python=3.9.21
+conda activate biomedparse
+conda install -c conda-forge compilers
+
+export CC=x86_64-conda-linux-gnu-cc
+export CXX=x86_64-conda-linux-gnu-c++
+export FC=x86_64-conda-linux-gnu-gfortran
+
+source ~/.bashrc
+
+conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
+
+apt install git
+git clone https://github.com/microsoft/BiomedParse.git
+cd BiomedParse
+pip install -r assets/requirements/requirements.txt
+pip install notebook
+jupyter notebook --allow-root
+docker rename sharp_rhodes biomed
+docker start -ai biomed
