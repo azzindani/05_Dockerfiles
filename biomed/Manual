@@ -46,4 +46,4 @@ jupyter notebook --allow-root
 docker rename sharp_rhodes biomed
 docker start -ai biomed
 
-pip install pydicom nibabel SimpleITK nilearn pyvista screeninfo pydicom mediapy
+pip install pydicom nibabel SimpleITK nilearn pyvista screeninfo mediapy
