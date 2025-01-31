@@ -47,7 +47,7 @@ RUN apt-get install -y git
 RUN conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia -y
 
 # Install Python packages
-RUN pip install notebook pydicom nibabel SimpleITK nilearn mediapy pyvista
+RUN pip install notebook pydicom nibabel SimpleITK nilearn mediapy pyvista screeninfo
 
 # Clone the BiomedParse repository
 #RUN git clone https://github.com/microsoft/BiomedParse.git
