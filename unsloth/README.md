@@ -3,7 +3,12 @@
 This guide helps you **build and run a Docker container** with GPU support for LLM training using [Unsloth](https://github.com/unslothai/unsloth), and access it via your **Chrome browser**.
 
 ---
+## 📁 Step 0: Create `unsloth` Folder on Drive D:
 
+Make sure you have a directory ready for your project.
+
+> 💡 This is where your `Dockerfile`, notebooks, and any local files will reside.
+---
 ## 📁 Step 1: Navigate to Your Docker Project Folder
 
 Open **PowerShell** or **CMD** and navigate to the directory where your `Dockerfile` is located:
