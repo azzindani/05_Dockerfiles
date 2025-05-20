@@ -42,7 +42,6 @@ This command:
 * Mounts your local `D:\unsloth` folder to `/mnt` inside the container
 
 ```terminal
-Start-Process "chrome.exe" "http://localhost:8888" ; `
 docker run -it --rm --name unsloth-gpu -p 8888:8888 --mount type=bind,source="D:\unsloth",target=/mnt --gpus all unsloth
 ```
 
